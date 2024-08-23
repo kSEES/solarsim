@@ -1,0 +1,28 @@
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: solarsim
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=solarsim
+      - POSTGRES_PASSWORD=solarsim
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/solardb
+      - SPRING_DATASOURCE_USERNAME=solarsim
+      - SPRING_DATASOURCE_PASSWORD=solarsim
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+    ports:
+      - "$LOCAL_PORT:$DOCKER_PORT"
+
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      - POSTGRES_USER=solarsim
+      - POSTGRES_PASSWORD=solarsim
+      - POSTGRES_DB=solardb
+    ports:
+      - "8080:8081"
