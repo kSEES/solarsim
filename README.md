@@ -1,4 +1,8 @@
-# SolarSim
+<p align="center">
+    <img src="src/docs/images/SolarSimBanner.png" width="400px" alt="SolarSim Logo">
+</p>
+
+
 SolarSim is a website that lets people experience and discover our solar system with ease.
 SolarSim also provides a user-friendly interface that lets everyone learn about the solar system.
 
