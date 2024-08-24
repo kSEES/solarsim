@@ -39,6 +39,22 @@ public class ScientificNotation {
         return a;
     }
 
+    public static ScientificNotation interpretNotation(String scientificNotation) throws Exception{
+        double significand, exponent;
+
+        exponent = Double.parseDouble(scientificNotation.substring(scientificNotation.indexOf("^")));
+
+        if(scientificNotation.startsWith("-")){
+            significand = Double.parseDouble(scientificNotation.substring(1, scientificNotation.indexOf(" ")));
+
+            return new ScientificNotation(true, significand, exponent);
+        }
+
+        significand = Double.parseDouble(scientificNotation.substring(0, scientificNotation.indexOf(" ")));
+
+        return new ScientificNotation(false, significand, exponent);
+    }
+
     public boolean isSigned() {
         return signed;
     }
