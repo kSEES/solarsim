@@ -1,5 +1,6 @@
 package com.solsorg.solarsim.model;
 
+import com.solsorg.solarsim.util.math.ScientificNotation;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,7 @@ public class Star extends SpaceEntity{
 
     private double radius;
 
-    public Star(double x, double y, double z, double mass){
+    public Star(double x, double y, double z, ScientificNotation mass){
         super(x, y, z, mass);
     }
 

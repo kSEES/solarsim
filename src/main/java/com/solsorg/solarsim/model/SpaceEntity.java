@@ -1,16 +1,19 @@
 package com.solsorg.solarsim.model;
 
+import com.solsorg.solarsim.util.math.ScientificNotation;
+
 public abstract class SpaceEntity {
     double x;
     double y;
     double z;
 
-    double mass;
+    ScientificNotation mass;
 
-    public SpaceEntity(double x, double y, double z, double mass) {
+    public SpaceEntity(double x, double y, double z, ScientificNotation mass) {
         this.x = x;
         this.y = y;
         this.z = z;
+
         this.mass = mass;
     }
 
@@ -40,11 +43,11 @@ public abstract class SpaceEntity {
         this.z = z;
     }
 
-    public double getMass() {
+    public ScientificNotation getMass() {
         return mass;
     }
 
-    public void setMass(double mass) {
+    public void setMass(ScientificNotation mass) {
         this.mass = mass;
     }
 }
