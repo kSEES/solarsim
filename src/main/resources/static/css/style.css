@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Fira_Sans_Condensed";
+    src: url(Fira_Sans_Condensed/FiraSansCondensed-Black.ttf);
+}
+body{font-family: "Fira_Sans_Condensed";}
+
+body{background-image: url(https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40654/FreevectorSpace-BackgroundAS0621_generated.jpg);
+background-repeat: no-repeat;
+background-size: cover;}
