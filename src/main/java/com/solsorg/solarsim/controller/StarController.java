@@ -42,10 +42,8 @@ public class StarController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createStar(@RequestBody Star star){
-        if(star.getName() != null){
-            if(starService.saveStar(star) != null){
-                return new ResponseEntity<>(HttpStatus.CREATED);
-            }
+        if(starService.saveStar(star) != null){
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
