@@ -1,20 +1,14 @@
 package com.solsorg.solarsim.util.math;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Embeddable;
 
+@Embeddable
 public class ScientificNotation {
     private boolean signed;
     private double exponent;
     private double significand;
 
-
-    @JsonCreator
-    public ScientificNotation(@JsonProperty("sign") boolean signed,
-                              @JsonProperty("significand") double significand,
-                              @JsonProperty("exponent") double exponent
-                              ) {
-
+    public ScientificNotation(boolean signed, double significand, double exponent) {
         this.significand = significand;
         this.exponent = exponent;
         this.signed = signed;

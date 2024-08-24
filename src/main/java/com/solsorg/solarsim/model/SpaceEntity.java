@@ -1,13 +1,20 @@
 package com.solsorg.solarsim.model;
 
 import com.solsorg.solarsim.util.math.ScientificNotation;
+import jakarta.persistence.*;
 
+@MappedSuperclass
 public abstract class SpaceEntity {
-    double x;
-    double y;
-    double z;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    ScientificNotation mass;
+    private double x;
+    private double y;
+    private double z;
+
+    @Embedded
+    private ScientificNotation mass;
 
     public SpaceEntity(double x, double y, double z, ScientificNotation mass) {
         this.x = x;
@@ -49,5 +56,13 @@ public abstract class SpaceEntity {
 
     public void setMass(ScientificNotation mass) {
         this.mass = mass;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
