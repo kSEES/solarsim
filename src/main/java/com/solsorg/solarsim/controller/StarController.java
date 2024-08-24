@@ -1,6 +1,6 @@
 package com.solsorg.solarsim.controller;
 
-import com.solsorg.solarsim.dto.StarDTO;
+import com.solsorg.solarsim.model.Star;
 import com.solsorg.solarsim.service.StarService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ public class StarController {
     private StarService starService;
 
     @GetMapping
-    public ResponseEntity<List<StarDTO>> getAllStars(){
-        List<StarDTO> stars = starService.getAllStarDTOs();
+    public ResponseEntity<List<Star>> getAllStars(){
+        List<Star> stars = starService.getAllStars();
 
         if(stars.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -28,8 +28,8 @@ public class StarController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StarDTO> getStarById(@PathVariable long id){
-        StarDTO star = starService.getStarDTOById(id);
+    public ResponseEntity<Star> getStarById(@PathVariable long id){
+        Star star = starService.getStarById(id);
 
         if(star == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -39,8 +39,8 @@ public class StarController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<String> createStar(@RequestBody StarDTO starDTO){
-        if(starService.saveStarDTO(starDTO) != null){
+    public ResponseEntity<String> createStar(@RequestBody Star star){
+        if(starService.saveStar(star) != null){
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
@@ -49,7 +49,7 @@ public class StarController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteStar(@PathVariable long id){
-        StarDTO foundStar = starService.getStarDTOById(id);
+        Star foundStar = starService.getStarById(id);
 
         if(foundStar == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

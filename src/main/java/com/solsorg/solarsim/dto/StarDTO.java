@@ -2,6 +2,7 @@ package com.solsorg.solarsim.dto;
 
 import java.util.List;
 
+@Deprecated
 public class StarDTO {
     private long id;
     private String name;

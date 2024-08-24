@@ -1,5 +1,6 @@
 package com.solsorg.solarsim.dto;
 
+@Deprecated
 public class PlanetDTO {
     private long id;
     private String name;
