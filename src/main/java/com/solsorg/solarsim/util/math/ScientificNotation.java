@@ -1,15 +1,17 @@
 package com.solsorg.solarsim.util.math;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class ScientificNotation {
     private boolean signed;
     private double exponent;
     private double significand;
 
     public ScientificNotation(boolean signed, double significand, double exponent) {
-        this.signed = signed;
-
         this.significand = significand;
         this.exponent = exponent;
+        this.signed = signed;
     }
 
     public ScientificNotation(double significand, double exponent){
@@ -17,6 +19,12 @@ public class ScientificNotation {
 
         this.significand = significand;
         this.exponent = exponent;
+    }
+
+    public ScientificNotation(){
+        this.signed = false;
+        this.exponent = 0;
+        this.significand = 0;
     }
 
     public static ScientificNotation compare(ScientificNotation a, ScientificNotation b) throws Exception{
