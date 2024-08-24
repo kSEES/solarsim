@@ -3,18 +3,18 @@ package com.solsorg.solarsim.model;
 import jakarta.persistence.Entity;
 
 @Entity
-public class Star extends SpaceEntity{
+public class Planet extends SpaceEntity{
     private String name;
     private double radius;
 
-    public Star(double x, double y, double z, double mass, double radius, String name){
+    public Planet(double x, double y, double z, double mass, double radius, String name){
         super(x, y, z, mass);
 
         this.radius = radius;
         this.name = name;
     }
 
-    public Star() {
+    public Planet(){
         super();
     }
 

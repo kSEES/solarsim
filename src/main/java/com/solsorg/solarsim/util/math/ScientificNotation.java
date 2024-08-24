@@ -3,6 +3,7 @@ package com.solsorg.solarsim.util.math;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
+@Deprecated
 public class ScientificNotation {
     private boolean signed;
     private double exponent;

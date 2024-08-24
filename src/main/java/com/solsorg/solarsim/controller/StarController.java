@@ -4,10 +4,8 @@ import com.solsorg.solarsim.model.Star;
 import com.solsorg.solarsim.service.StarService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,10 +40,8 @@ public class StarController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createStar(@RequestBody Star star){
-        if(star.getName() != null){
-            if(starService.saveStar(star) != null){
-                return new ResponseEntity<>(HttpStatus.CREATED);
-            }
+        if(starService.saveStar(star) != null){
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
