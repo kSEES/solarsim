@@ -55,3 +55,37 @@ body {
   background-color: #ab8258;
   border-radius: 5px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+li,a:hover{
+    background-color: #FF9874;
+}
+li,a{
+    transition: all 0.3s ease 0s;
+}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+        position:fixed;
+        top:0;
+    width:100%} /*Changes menu color*/ 
+
+    li {
+        display: inline;
+        float: left;
+    border-right: 1px solid #bbb;}
+
+    li, a {
+        display: block;
+        color: rgb(255, 255, 255); /*Changes font color*/
+        text-align: center;
+        padding: 20px 20px;
+        background-color: #000000; /*Changes background color of certain buttons*/
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+    }
