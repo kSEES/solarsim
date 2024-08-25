@@ -3,7 +3,14 @@
     src: url(Fira_Sans_Condensed/FiraSansCondensed-Black.ttf);
 }
 body{font-family: "Fira_Sans_Condensed";}
+h1{color: black;
+text-align: center;}
+body{color: black;
+text-align: center;}
 
-body{background-image: url(https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40654/FreevectorSpace-BackgroundAS0621_generated.jpg);
+body{background-image: url();
 background-repeat: no-repeat;
-background-size: cover;}
+background-size: cover;
+background-attachment: fixed;
+background-position: center;}
+
