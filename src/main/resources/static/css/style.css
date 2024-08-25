@@ -4,3 +4,54 @@ body {
   font-family: "Fira_Sans_Condensed";
   background-color: #242424;
 }
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menu-icon .bar {
+  width: 100%;
+  height: 5px;
+  background-color: #cec1c1;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #4d605f;
+  transition: right 0.3s ease;
+  padding-top: 60px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin: 20px 0;
+}
+
+.menu ul li a {
+  color: #fefefe;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+}
+
+.menu ul li a:hover {
+  background-color: #ab8258;
+  border-radius: 5px;
+}
