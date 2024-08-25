@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: Stars API
+  description: The Stars API for SolarSim.
+  version: 1.0.0
+servers:
+  - url: 'https://localhost/api'
+paths:
+  /stars:
+    get:
+      summary: Get all the stars
+      operationId: getAllStars
+      responses:
+        '200':
+          description: Successfully retrieved all the stars.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Star'
+        '204':
+          description: No content, no stars found.
+    post:
+      summary: Create a new star
+      operationId: createStar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Star'
+      responses:
+        '201':
+          description: Star added successfully.
+        '422':
+          description: Improper data passed.
+  /stars/{id}:
+    get:
+      summary: Get a star by ID
+      operationId: getStarById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved the star.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Star'
+        '404':
+          description: The star with the specified ID doesn't exist.
+    delete:
+      summary: Delete a star by ID
+      operationId: deleteStarById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Star deleted successfully, no content returned.
+        '404':
+          description: The specified star wasn't found.
+
+components:
+  schemas:
+    Star:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        radius:
+          type: number
+        mass:
+          type: number
+        x:
+          type: number
+        y:
+          type: number
+        z:
+          type: number
+      required:
+        - name
+        - radius
+        - mass
+        - x
+        - y
+        - z

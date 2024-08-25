@@ -1,0 +1,101 @@
+openapi: 3.0.3
+info:
+  title: Planets API
+  description: The Planets API for SolarSim.
+  version: 1.0.0
+servers:
+  - url: 'https://localhost/api'
+paths:
+  /planets:
+    get:
+      summary: Get all the planets
+      operationId: getAllPlanets
+      responses:
+        '200':
+          description: Successfully retrieved all the planets.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Planet'
+        '204':
+          description: No content, no planets found.
+    post:
+      summary: Create a new planet
+      operationId: createPlanet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Planet'
+      responses:
+        '201':
+          description: Planet added successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Planet'
+        '422':
+          description: Improper data passed.
+  /planets/{id}:
+    get:
+      summary: Get a planet by ID
+      operationId: getPlanetById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved the planet.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Planet'
+        '404':
+          description: The planet with the specified ID doesn't exist.
+    delete:
+      summary: Delete a planet by ID
+      operationId: deletePlanetById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Planet deleted successfully, no content returned.
+        '404':
+          description: The specified planet wasn't found.
+
+components:
+  schemas:
+    Planet:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        mass:
+          type: number
+        radius:
+          type: number
+        x:
+          type: number
+        y:
+          type: number
+        z:
+          type: number
+      required:
+        - name
+        - mass
+        - radius
+        - x
+        - y
+        - z
