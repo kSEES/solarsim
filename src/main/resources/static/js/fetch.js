@@ -1,4 +1,4 @@
-fetch('http://localhost:9090/api/stars/create', {
+fetch('/api/stars/create', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -10,4 +10,5 @@ fetch('http://localhost:9090/api/stars/create', {
         mass: 2.02e30
     })
 });
-console.log(fetch('http://localhost:9090/api/stars'));
+
+console.log(fetch('/api/stars'));

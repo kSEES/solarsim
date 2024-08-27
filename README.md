@@ -18,6 +18,11 @@ In order to run SolarSim, you need to have [docker](https://www.docker.com/) ins
 have a computer with virtualization on. **Ensure that you have the Docker service running in the background.**
 
 ```bash
+# (!!!) MacOS Only
+# Giving proper permissions to the mvnw file.
+# chmod changes the permissions to allow Maven to execute.
+chmod +x .\mvnw
+
 # Building the program with Maven.
 .\mvnw package -DskipTests
 

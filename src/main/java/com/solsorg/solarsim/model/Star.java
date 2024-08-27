@@ -2,6 +2,8 @@ package com.solsorg.solarsim.model;
 
 import jakarta.persistence.Entity;
 
+import java.util.Objects;
+
 @Entity
 public class Star extends SpaceEntity{
     private String name;
@@ -16,6 +18,13 @@ public class Star extends SpaceEntity{
 
     public Star() {
         super();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean doesEqual = false;
+
+        return doesEqual;
     }
 
     public String getName() {

@@ -18,6 +18,13 @@ public class Planet extends SpaceEntity{
         super();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        boolean doesEqual = false;
+
+        return doesEqual;
+    }
+
     public String getName() {
         return name;
     }
