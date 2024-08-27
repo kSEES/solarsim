@@ -2,8 +2,6 @@ package com.solsorg.solarsim.model;
 
 import jakarta.persistence.Entity;
 
-import java.util.Objects;
-
 @Entity
 public class Star extends SpaceEntity{
     private String name;
