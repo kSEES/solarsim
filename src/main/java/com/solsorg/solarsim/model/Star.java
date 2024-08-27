@@ -22,7 +22,11 @@ public class Star extends SpaceEntity{
 
     @Override
     public boolean equals(Object o) {
+        Star currentStar = this;
+        Star otherStar = (Star) o;
         boolean doesEqual = false;
+
+        // Define how two stars would be equal, for example, if they have the same name.
 
         return doesEqual;
     }

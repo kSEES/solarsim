@@ -20,7 +20,11 @@ public class Planet extends SpaceEntity{
 
     @Override
     public boolean equals(Object o) {
+        Planet currentPlanet = this;
+        Planet otherPlanet = (Planet) o;
         boolean doesEqual = false;
+
+        // Try doing Star.java first, the same principle lives.
 
         return doesEqual;
     }
