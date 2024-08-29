@@ -8,12 +8,12 @@ body {
 
 .menu-icon {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 35px;
+  right: 30px;
   width: 40px;
   height: 30px;
   display: flex;
-  padding: 20px, 20px;
+  padding: 200px, 20px;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
@@ -59,13 +59,11 @@ body {
   border-radius: 5px;
 }
 
-li,
-a:hover {
+li a:hover {
   background-color: #ff9874;
 }
 
-li,
-a {
+li, a {
   transition: all 0.3s ease 0s;
 }
 
@@ -86,8 +84,7 @@ li {
   border-right: 1px solid #bbb;
 }
 
-li,
-a {
+li, a {
   display: block;
   color: rgb(255, 255, 255); 
   text-align: center;
