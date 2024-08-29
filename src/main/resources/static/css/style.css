@@ -28,7 +28,7 @@ body {
 .menu {
   position: fixed;
   top: 0;
-  right: -20px;
+  right: -250px;
   width: 250px;
   height: 100%;
   background-color: #789291;
