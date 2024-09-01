@@ -24,7 +24,7 @@ public class AsteroidService {
         return asteroidRepository.save(asteroid);
     }
 
-    public boolean deleteAsteroid(long id){
+    public void deleteAsteroid(long id){
         asteroidRepository.deleteById(id);
     }
 }
