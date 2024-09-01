@@ -29,7 +29,7 @@ body {
 .menu {
   position: fixed;
   top: 0px;
-  right: -435px;
+  right: -434px;
   width: 250px;
   height: 100%;
   background-color: #78929100;
@@ -39,9 +39,9 @@ body {
 
 .menu ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0px;
+  height: 15%;
   top: 0px;
-  height: 50px;
 }
 
 .menu ul li {
@@ -57,7 +57,7 @@ body {
 }
 
 .menu ul li a:hover {
-  background-color: #ab8258;
+  background-color: #ff9874;
   border-radius: 5px;
 }
 

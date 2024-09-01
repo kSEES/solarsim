@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleMenu() {
     const menu = document.querySelector('.menu');
-    if (menu.style.right === '435px') {
-        menu.style.right = '-435px';
+    if (menu.style.right === '434px') {
+        menu.style.right = '-434px';
     } else {
-        menu.style.right = '435px';
+        menu.style.right = '434px';
     }
   }
