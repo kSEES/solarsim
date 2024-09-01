@@ -1,56 +1,31 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>Solar Simulation</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SolarSim</title>
+
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
 
-  <script src="script.js"></script>
-
   <body>
-    <div class="topnav">
+    <header>
+      <img
+        class="logo"
+        src="images/SolarSimBanner.png"
+        width="120px"
+        alt="SolarSim Logo"
+      />
+
       <nav>
-        <ul class="listnav">
-          <li><img src="images/SolarSimBanner.png" width="200" id="logo" /></li>
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
+        <ul class="nav_links">
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/planets.html">Planets</a></li>
+          <li><a href="/model.html">Model</a></li>
         </ul>
       </nav>
+    </header>
+
+    <div class="title_information">
+      <h1>SolarSim</h1>
+      <p>SolarSim is an upcoming orrery space model for the NASA Space Apps Challenge 2024.</p>
     </div>
-
-    <div class="menu-icon" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-
-    <nav class="menu">
-      <ul>
-        <li><a href="https://www.youtube.com/" target="_blank">Orrery</a></li>
-        <li><a href="https://www.youtube.com/" target="_blank">Planets</a></li>
-        <li>
-          <a href="https://www.youtube.com/" target="_blank"
-            >Habitable Environments</a
-          >
-        </li>
-        <li>
-          <a href="https://www.youtube.com/" target="_blank">Extra Help</a>
-        </li>
-      </ul>
-    </nav>
-
-    <script src="js/script.js"></script>
-    <script src="js/fetch.js"></script>
-
-    <p>
-      Welcome to SolarSim! SolarSim is a hub where visitors can view the
-      different planets of the solar system as well as information about them!
-      This website provides a user-friendly interface to discover the solar
-      system with ease. All information is accurate and up to date.
-    </p>
   </body>
 </html>
