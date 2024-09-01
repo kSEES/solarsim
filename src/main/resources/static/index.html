@@ -1,45 +1,35 @@
-<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolarSim</title>
 
-<head>
-  <title>Solar Simulation</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SolarSim</title>
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<script src="script.js"></script>
+  <body>
+    <header>
+      <img
+        class="logo"
+        src="images/SolarSimBanner.png"
+        width="120px"
+        alt="SolarSim Logo"
+      />
 
-<body>
-  <div class="topnav">
-    <nav>
-      <ul class="listnav">
-        <li><img src="images/SolarSimBanner.png" width="200" id="logo" /></li>
-        <li><a class="active" href="home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-  </div>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/model.html">Model</a></li>
+          <li><a href="/planets.html">Planets</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <div class="menu-icon" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
+    <h1>SolarSim</h1>
+    <p class="main-information">
+      SolarSim is an Orrery Space Model for the NASA Space Apps Challenge 2024.
+    </p>
 
-  <nav class="menu">
-    <ul>
-      <li><a href="https://www.youtube.com/" target="_blank">Orrery</a></li>
-      <li><a href="https://www.youtube.com/" target="_blank">Planets</a></li>
-      <li><a href="https://www.youtube.com/" target="_blank">Habitable Environments</a></li>
-      <li><a href="https://www.youtube.com/" target="_blank">Extra Help</a></li>
-    </ul>
-  </nav>
-
-  <script src="js/script.js"></script>
-  <script src="js/fetch.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
