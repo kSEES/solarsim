@@ -7,38 +7,40 @@ body {
 }
 
 h1 {
-	font-family: "Fira Sans Condensed";
-	color: rgb(255, 255, 255);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-image: url(https://wallpapers.com/images/featured/space-background-htygkta8z6o3mcx2.jpg);
-	font-size: 150px;
-	background-repeat: no-repeat;
-	background-size: 1800px 200px;
-	text-transform: uppercaese;
-	margin-top: 200px;
-	text-align:center;
-	text-shadow: #242424;
-	}
+  font-family: "Fira Sans Condensed";
+  color: rgb(255, 255, 255);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: url(https://wallpapers.com/images/featured/space-background-htygkta8z6o3mcx2.jpg);
+  font-size: 150px;
+  background-repeat: no-repeat;
+  background-size: 1800px 200px;
+  text-transform: uppercaese;
+  margin-top: 200px;
+  text-align: center;
+  text-shadow: #242424;
+}
 
 h2 {
-	font-family: "Fira Sans Condensed";
-	color: rgb(166, 166, 166);
-
+  font-family: "Fira Sans Condensed";
+  color: rgb(166, 166, 166);
 }
 
 p {
-	font-family: "Fira Sans Condensed";
-	color: rgb(255, 255, 255);
-	font-size: 20px;
+  font-family: "Fira Sans Condensed";
+  color: rgb(255, 255, 255);
+  font-size: 20px;
 }
 
-body
-	{
-		background-image: url(https://www.hdwallpapers.in/download/galaxies_stars_glare_black_background_4k_hd_space-3840x2160.jpg);
-		background-size:cover
-	}
-.desc {text-align:center;}
+body {
+  background-image: url(https://www.hdwallpapers.in/download/galaxies_stars_glare_black_background_4k_hd_space-3840x2160.jpg);
+  background-size: cover;
+}
 
+.desc {
+  text-align: center;
+}
 
-.mercury{color: red;}
+.mercury {
+  color: red;
+}
