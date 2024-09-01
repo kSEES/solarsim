@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function toggleMenu() {
-  const menu = document.querySelector(".menu");
-  if (menu.style.right === "0px") {
-    menu.style.right = "-250px";
-  } else {
-    menu.style.right = "0px";
+    const menu = document.querySelector('.menu');
+    if (menu.style.right === '435px') {
+        menu.style.right = '-435px';
+    } else {
+        menu.style.right = '435px';
+    }
   }
-}

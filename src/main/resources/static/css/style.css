@@ -28,11 +28,11 @@ body {
 
 .menu {
   position: fixed;
-  top: 0;
-  right: -250px;
+  top: 0px;
+  right: -435px;
   width: 250px;
   height: 100%;
-  background-color: #789291;
+  background-color: #78929100;
   transition: right 0.3s ease;
   padding-top: 60px;
 }
@@ -40,6 +40,8 @@ body {
 .menu ul {
   list-style-type: none;
   padding: 0;
+  top: 0px;
+  height: 50px;
 }
 
 .menu ul li {
@@ -49,7 +51,7 @@ body {
 .menu ul li a {
   color: #fefefe;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   display: block;
   padding: 10px;
 }
