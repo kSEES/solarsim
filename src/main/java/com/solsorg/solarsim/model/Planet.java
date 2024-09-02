@@ -7,14 +7,14 @@ public class Planet extends SpaceEntity{
     private String name;
     private double radius;
 
-    private long dayLength;
-    private long yearLength;
+    private double dayLength;
+    private double yearLength;
     private float eccentricity;
     private float axialTilt;
-    private long perihelion;
-    private long aphelion;
+    private double perihelion;
+    private double aphelion;
 
-    public Planet(double x, double y, double z, double mass, String name, double radius, long dayLength, long yearLength, float eccentricity, float axialTilt, long perihelion, long aphelion) {
+    public Planet(double x, double y, double z, double mass, String name, double radius, double dayLength, double yearLength, float eccentricity, float axialTilt, double perihelion, double aphelion) {
         super(x, y, z, mass);
         
         this.name = name;
@@ -38,17 +38,6 @@ public class Planet extends SpaceEntity{
         super();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        Planet currentPlanet = this;
-        Planet otherPlanet = (Planet) o;
-        boolean doesEqual = false;
-
-        // Try doing Star.java first, the same principle lives.
-
-        return doesEqual;
-    }
-
     public String getName() {
         return name;
     }
@@ -65,19 +54,19 @@ public class Planet extends SpaceEntity{
         this.radius = radius;
     }
 
-    public long getDayLength() {
+    public double getDayLength() {
         return dayLength;
     }
 
-    public void setDayLength(long dayLength) {
+    public void setDayLength(double dayLength) {
         this.dayLength = dayLength;
     }
 
-    public long getYearLength() {
+    public double getYearLength() {
         return yearLength;
     }
 
-    public void setYearLength(long yearLength) {
+    public void setYearLength(double yearLength) {
         this.yearLength = yearLength;
     }
 
@@ -97,19 +86,17 @@ public class Planet extends SpaceEntity{
         this.axialTilt = axialTilt;
     }
 
-    public long getPerihelion() {
+    public double getPerihelion() {
         return perihelion;
     }
 
-    public void setPerihelion(long perihelion) {
-        this.perihelion = perihelion;
-    }
+    public void setPerihelion(double perihelion) { this.perihelion = perihelion; }
 
-    public long getAphelion() {
+    public double getAphelion() {
         return aphelion;
     }
 
-    public void setAphelion(long aphelion) {
+    public void setAphelion(double aphelion) {
         this.aphelion = aphelion;
     }
 }

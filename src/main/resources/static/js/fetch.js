@@ -9,11 +9,11 @@ fetch('/api/planets/create', {
         z: 3.0e18,
         mass: 5.972e24,
         dayLength: 86400,
-        yearLength: 31557600,
+        yearLength: 3.155760e8,
         eccentricity: 0.0167,
         axialTilt: 23.5,
-        perihelion: 147098290,
-        aphelion: 152100000
+        perihelion: 1.4709829e9,
+        aphelion: 1.521e8
     })
 })
 .then(response => response.json())
