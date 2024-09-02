@@ -1,5 +1,7 @@
-var mercuryinfo {
-    mass = 1000000000000
+let sciNotNum = 1.00e7;
+
+function convert(convertee){
+    return convertee.toString().replace("e", " * 10^");
 }
 
-console.log(mercuryinfo.mass.toExponential().replace(/e\+?/, ' x 10^'));
+console.log(convert(sciNotNum))
