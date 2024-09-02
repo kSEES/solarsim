@@ -2,6 +2,8 @@ package com.solsorg.solarsim.controller;
 
 import com.solsorg.solarsim.model.Asteroid;
 import com.solsorg.solarsim.service.AsteroidService;
+import com.solsorg.solarsim.util.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +16,14 @@ import java.util.List;
 public class AsteroidController {
     @Autowired
     private AsteroidService asteroidService;
+    private final Logger instance = Logger.getInstance();
 
     @GetMapping
     public ResponseEntity<List<Asteroid>> getAllAsteroids(){
         List<Asteroid> asteroids = asteroidService.getAll();
 
         if(asteroids.isEmpty()){
+            instance.logInfo("The request was successful, but there was no data to return.");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -31,6 +35,7 @@ public class AsteroidController {
         Asteroid found = asteroidService.getFromID(id);
 
         if(found == null){
+            instance.logError("Unable to find asteroid with ID " + id + ".");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -43,6 +48,7 @@ public class AsteroidController {
             return new ResponseEntity<>(asteroid, HttpStatus.CREATED);
         }
 
+        instance.logError("Unable to create asteroid.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 

@@ -2,6 +2,7 @@ package com.solsorg.solarsim.controller;
 
 import com.solsorg.solarsim.model.Planet;
 import com.solsorg.solarsim.service.PlanetService;
+import com.solsorg.solarsim.util.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,12 +16,14 @@ import java.util.List;
 public class PlanetController {
     @Autowired
     private PlanetService planetService;
+    private final Logger instance = Logger.getInstance();
 
     @GetMapping
     public ResponseEntity<List<Planet>> getAllPlanets() {
         List<Planet> planets = planetService.getAllPlanets();
 
         if(planets.isEmpty()){
+            instance.logInfo("The request was successful, but there are no data to return.");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -32,6 +35,7 @@ public class PlanetController {
         Planet planet = planetService.getPlanetById(id);
 
         if(planet == null){
+            instance.logError("Unable to find planet with ID " + id + ".");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -44,6 +48,7 @@ public class PlanetController {
             return new ResponseEntity<>(planet, HttpStatus.CREATED);
         }
 
+        instance.logError("Unable to create a planet.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -52,6 +57,7 @@ public class PlanetController {
         Planet found = planetService.getPlanetById(id);
 
         if(found == null){
+            instance.logError("Unable to find planet with ID " + id + ". Unable to delete said planet.");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 

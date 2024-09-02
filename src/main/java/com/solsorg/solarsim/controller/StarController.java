@@ -2,6 +2,7 @@ package com.solsorg.solarsim.controller;
 
 import com.solsorg.solarsim.model.Star;
 import com.solsorg.solarsim.service.StarService;
+import com.solsorg.solarsim.util.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,12 +16,14 @@ import java.util.List;
 public class StarController {
     @Autowired
     private StarService starService;
+    private final Logger instance = Logger.getInstance();
 
     @GetMapping
     public ResponseEntity<List<Star>> getAllStars(){
         List<Star> stars = starService.getAllStars();
 
         if(stars.isEmpty()){
+            instance.logInfo("The request is successful, but there are no stars to return.");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -32,6 +35,7 @@ public class StarController {
         Star star = starService.getStarById(id);
 
         if(star == null){
+            instance.logError("Unable to find a star with ID " + id + ".");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -44,6 +48,7 @@ public class StarController {
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
+        instance.logError("Unable to create a star.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -52,6 +57,7 @@ public class StarController {
         Star foundStar = starService.getStarById(id);
 
         if(foundStar == null){
+            instance.logError("Unable to find a star with ID " + id + ". Unable to delete said star.");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
