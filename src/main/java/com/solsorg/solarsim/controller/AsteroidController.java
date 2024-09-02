@@ -35,7 +35,7 @@ public class AsteroidController {
         Asteroid found = asteroidService.getFromID(id);
 
         if(found == null){
-            instance.logError("Unable to find asteroid with ID " + id + ".");
+            instance.logError("Unable to find an asteroid with ID " + id + ".");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -48,7 +48,7 @@ public class AsteroidController {
             return new ResponseEntity<>(asteroid, HttpStatus.CREATED);
         }
 
-        instance.logError("Unable to create asteroid.");
+        instance.logError("Unable to create the asteroid.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 

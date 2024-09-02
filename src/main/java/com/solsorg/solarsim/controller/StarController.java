@@ -23,7 +23,7 @@ public class StarController {
         List<Star> stars = starService.getAllStars();
 
         if(stars.isEmpty()){
-            instance.logInfo("The request is successful, but there are no stars to return.");
+            instance.logInfo("The request was successful, but there were no stars to return.");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -48,7 +48,7 @@ public class StarController {
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
-        instance.logError("Unable to create a star.");
+        instance.logError("Unable to create the star.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -57,7 +57,7 @@ public class StarController {
         Star foundStar = starService.getStarById(id);
 
         if(foundStar == null){
-            instance.logError("Unable to find a star with ID " + id + ". Unable to delete said star.");
+            instance.logError("Unable to find a star with ID " + id + ", therefore, the star could not be deleted.");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 

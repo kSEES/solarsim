@@ -23,7 +23,7 @@ public class PlanetController {
         List<Planet> planets = planetService.getAllPlanets();
 
         if(planets.isEmpty()){
-            instance.logInfo("The request was successful, but there are no data to return.");
+            instance.logInfo("The request was successful, but there was no data to return.");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -35,7 +35,7 @@ public class PlanetController {
         Planet planet = planetService.getPlanetById(id);
 
         if(planet == null){
-            instance.logError("Unable to find planet with ID " + id + ".");
+            instance.logError("Unable to find the planet with ID " + id + ".");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -48,7 +48,7 @@ public class PlanetController {
             return new ResponseEntity<>(planet, HttpStatus.CREATED);
         }
 
-        instance.logError("Unable to create a planet.");
+        instance.logError("Unable to create the planet.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -57,7 +57,7 @@ public class PlanetController {
         Planet found = planetService.getPlanetById(id);
 
         if(found == null){
-            instance.logError("Unable to find planet with ID " + id + ". Unable to delete said planet.");
+            instance.logError("Unable to find a planet with ID " + id + ". Unable to delete said planet.");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 

@@ -1,5 +1,6 @@
 package com.solsorg.solarsim.util;
 
+import java.io.FileWriter;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -10,24 +11,43 @@ public class Logger {
     private final List<String> warnings;
     private final List<String> infos;
 
-    public Logger(){
+    private final FileWriter writer;
+    private final String logLocation = "LOGS.txt";
+
+    public Logger() throws Exception {
+        this.writer = new FileWriter(logLocation, true);
         this.errors = new ArrayList<>();
         this.warnings = new ArrayList<>();
         this.infos = new ArrayList<>();
     }
 
     public void logError(String errorMessage){
-        System.out.println("[ERROR]" + errorMessage);
+        System.out.println("[ERROR]: " + errorMessage);
+
+        try{
+            writer.write(errorMessage);
+        } catch (Exception ignored){}
+
         errors.add(errorMessage);
     }
 
     public void logWarning(String warningMessage){
-        System.out.println("[WARNING]" + warningMessage);
+        System.out.println("[WARNING]: " + warningMessage);
+
+        try{
+            writer.write(warningMessage);
+        } catch (Exception ignored){}
+
         warnings.add(warningMessage);
     }
 
     public void logInfo(String infoMessage){
-        System.out.println("[INFO]" + infoMessage);
+        System.out.println("[INFO]: " + infoMessage);
+
+        try{
+            writer.write(infoMessage);
+        } catch (Exception ignored){}
+
         infos.add(infoMessage);
     }
 

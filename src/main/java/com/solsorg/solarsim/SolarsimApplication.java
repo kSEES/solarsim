@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SolarsimApplication {
 	public static void main(String[] args) {
-		Logger.setInstance(new Logger());
+		try{
+			Logger.setInstance(new Logger());
+		} catch (Exception e){
+			System.out.println("Unable to initialize logger.");
+		}
+
 		SpringApplication.run(SolarsimApplication.class, args);
 	}
 }
