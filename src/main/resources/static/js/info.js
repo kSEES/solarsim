@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const uranusinfo = planetinfo[6];
       const neptuneinfo = planetinfo[7];
 
+      mercuryinfo.mass.replace(/e\+?/, ' x 10^');
+
       document.getElementById("mercury_tech_info").innerHTML = mercuryinfo.name + "<br>" + mercuryinfo.mass + "<br>" +mercuryinfo.radius + "<br>" + mercuryinfo.dayLength + "<br>" + mercuryinfo.yearLength + "<br>" + mercuryinfo.eccentricity + "<br>" + mercuryinfo.axialTilt + "<br>" + mercuryinfo.perihelion + "<br>" + mercuryinfo.aphelion;
       document.getElementById("venus_tech_info").innerHTML = venusinfo.name + "<br>" + venusinfo.mass + "<br>" +venusinfo.radius + "<br>" + venusinfo.dayLength + "<br>" + venusinfo.yearLength + "<br>" + venusinfo.eccentricity + "<br>" + venusinfo.axialTilt + "<br>" + venusinfo.perihelion + "<br>" + venusinfo.aphelion;
       document.getElementById("earth_tech_info").innerHTML = earthinfo.name + "<br>" + earthinfo.mass + "<br>" +earthinfo.radius + "<br>" + earthinfo.dayLength + "<br>" + earthinfo.yearLength + "<br>" + earthinfo.eccentricity + "<br>" + earthinfo.axialTilt + "<br>" + earthinfo.perihelion + "<br>" + earthinfo.aphelion;
