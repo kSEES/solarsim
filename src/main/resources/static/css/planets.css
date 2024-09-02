@@ -35,47 +35,72 @@ p {
 body {
   background-image: url(https://www.hdwallpapers.in/download/galaxies_stars_glare_black_background_4k_hd_space-3840x2160.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .desc {
   text-align: center;
   font-size: 30px;
-  margin-bottom: 0px;
+  margin-bottom: 200px
 }
 
 .Mercury {
   color: #B7B8B9;
-  text-align: right;
-}
-
-.Mercury-desc {
-  text-align:right;
+  font-size: 60px;
 }
 
 .Venus{
   color:	#e39e1c;
+  font-size:  60px;
 }
 
 .Earth{
-  color:	#9fc164
+  color:	#9fc164;
+  font-size:  60px;
 }
 
 .Mars{
-  color: #c1440e
+  color: #c1440e;
+  font-size:  60px;
 }
 
 .Jupiter{
-  color:#c99039
+  color:#c99039;
+  font-size:  60px;
 }
 
 .Saturn{
-  color: 	#ead6b8
+  color: 	#ead6b8;
+  font-size:  60px;
 }
 
 .Uranus{
-  color:	#c6d3e3
+  color:	#c6d3e3;
+  font-size:  60px;
 }
 
 .Neptune{
-  color: 	#3f54ba
+  color: 	#3f54ba;
+  font-size:  60px;
+}
+
+.Mercury-image{
+  float:left;
+  margin-right: 20px;
+}
+
+.planet-image{
+  float:left;
+  margin-right: 20px;
+  width:500px;
+  height:500px;
+}
+
+.planet-desc{
+  margin-bottom:  1000px;
+  text-align:left
+}
+
+.planet-header
+{font-size:  60px;
 }
