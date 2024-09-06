@@ -8,6 +8,32 @@ document.addEventListener("DOMContentLoaded", function () {
       
       const planetinfo = await response.json();
 
+      class planet {
+        name = 0;
+        mass = 0;
+        radius = 0;
+        dayLength = 0;
+        yearLength = 0;
+        eccentricity = 0;
+        axialTilt = 0;
+        perihelion = 0;
+        aphelion = 0;
+        constructor(name, mass, radius, dayLength, yearLength, eccentricity, axialTilt, perihelion, aphelion) {
+          this.name = name;
+          this.mass = mass;
+          this.radius = radius;
+          this.dayLength = dayLength;
+          this.yearLength = yearLength;
+          this.eccentricity = eccentricity;
+          this.axialTilt = axialTilt;
+          this.perihelion = perihelion;
+          this.aphelion = aphelion;
+        }
+        constructor() {
+          
+        }
+      }
+
       const mercuryinfo = planetinfo[0];
       const venusinfo = planetinfo[1];
       const earthinfo = planetinfo[2];
