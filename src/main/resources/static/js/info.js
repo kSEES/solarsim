@@ -115,4 +115,5 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error fetching planet data:", error);
     }
   }
+  planetDataFetch();
 });
