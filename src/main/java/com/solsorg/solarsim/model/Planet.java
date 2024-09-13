@@ -14,6 +14,21 @@ public class Planet extends SpaceEntity{
     private double perihelion;
     private double aphelion;
 
+    /*
+        UNITS FOR DATA VARIABLES
+        * See superceded values in SpaceEntity.
+
+        VARIABLE NAME         UNIT
+        ---------------------------------------
+        - Radius        ->    Kilometer (km)
+        - DayLength     ->    Second (s)
+        - YearLength    ->    Second (s)
+        - Eccentricity  ->    Ratio
+        - AxialTilt     ->    Degree (°)
+        - Perihelion    ->    Kilometer (km)
+        - Aphelion      ->    Kilometer (km)
+     */
+
     public Planet(double x, double y, double z, double mass, String name, double radius, double dayLength, double yearLength, float eccentricity, float axialTilt, double perihelion, double aphelion) {
         super(x, y, z, mass);
         

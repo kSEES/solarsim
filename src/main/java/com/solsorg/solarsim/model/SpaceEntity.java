@@ -14,6 +14,15 @@ public abstract class SpaceEntity {
 
     private double mass;
 
+    /*
+        UNITS FOR DATA VARIABLES
+
+        VARIABLE NAME       UNIT
+        ---------------------------------------
+        - x, y, z     ->    Astronomical Unit (AU)
+        - mass        ->    Kilogram (kg)
+     */
+
     public SpaceEntity(double x, double y, double z, double mass) {
         this.x = x;
         this.y = y;

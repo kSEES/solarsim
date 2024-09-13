@@ -8,6 +8,16 @@ public class Asteroid extends SpaceEntity{
     private String composition;
     private double size;
 
+    /*
+        UNITS FOR DATA VARIABLES
+        * See superceded values in SpaceEntity.
+
+        VARIABLE NAME           UNIT
+        ---------------------------------------
+        - Composition     ->    N/A (n/a)
+        - Size            ->    Kilometers (km)
+    */
+
     public Asteroid(double x, double y, double z, double mass, String name, String composition, double size){
         super(x, y, z, mass);
 
