@@ -10,3 +10,7 @@ const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+const geometry = new THREE.SphereGeometry(15, 32, 16);
+const material = new THREE.MeshBasicMaterial( { color: 0x0096FF } );
+const sphere = new THREE.Mesh( geometry, material ); sphere.add(scene);
