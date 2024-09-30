@@ -2,9 +2,7 @@ package com.solsorg.solarsim.controller;
 
 import com.solsorg.solarsim.model.Asteroid;
 import com.solsorg.solarsim.service.AsteroidService;
-import com.solsorg.solarsim.util.Logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,16 +12,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/asteroids")
 public class AsteroidController {
-    @Autowired
-    private AsteroidService asteroidService;
-    private final Logger instance = Logger.getInstance();
+    private final AsteroidService asteroidService;
+
+    public AsteroidController(AsteroidService asteroidService){
+        this.asteroidService = asteroidService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Asteroid>> getAllAsteroids(){
         List<Asteroid> asteroids = asteroidService.getAll();
 
         if(asteroids.isEmpty()){
-            instance.logInfo("The request was successful, but there was no data to return.");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -35,7 +34,6 @@ public class AsteroidController {
         Asteroid found = asteroidService.getFromID(id);
 
         if(found == null){
-            instance.logError("Unable to find an asteroid with ID " + id + ".");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -48,7 +46,6 @@ public class AsteroidController {
             return new ResponseEntity<>(asteroid, HttpStatus.CREATED);
         }
 
-        instance.logError("Unable to create the asteroid.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -61,6 +58,11 @@ public class AsteroidController {
         }
 
         asteroidService.deleteAsteroid(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PostMapping("/modify/{id}")
+    public ResponseEntity<Asteroid> modifyAsteroid(@PathVariable long id){
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
