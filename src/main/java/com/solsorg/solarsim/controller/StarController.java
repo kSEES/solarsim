@@ -2,9 +2,7 @@ package com.solsorg.solarsim.controller;
 
 import com.solsorg.solarsim.model.Star;
 import com.solsorg.solarsim.service.StarService;
-import com.solsorg.solarsim.util.Logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,16 +12,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/stars")
 public class StarController {
-    @Autowired
-    private StarService starService;
-    private final Logger instance = Logger.getInstance();
+    private final StarService starService;
+
+    public StarController(StarService starService){
+        this.starService = starService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Star>> getAllStars(){
         List<Star> stars = starService.getAllStars();
 
         if(stars.isEmpty()){
-            instance.logInfo("The request was successful, but there were no stars to return.");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -35,7 +34,6 @@ public class StarController {
         Star star = starService.getStarById(id);
 
         if(star == null){
-            instance.logError("Unable to find a star with ID " + id + ".");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -48,7 +46,6 @@ public class StarController {
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
-        instance.logError("Unable to create the star.");
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -57,7 +54,6 @@ public class StarController {
         Star foundStar = starService.getStarById(id);
 
         if(foundStar == null){
-            instance.logError("Unable to find a star with ID " + id + ", therefore, the star could not be deleted.");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
